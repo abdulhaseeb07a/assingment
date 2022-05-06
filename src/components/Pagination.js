@@ -47,13 +47,13 @@ const TablePagination = props => {
         >
           <div className="arrow left" />
         </li>
-        {paginationRange.map(pageNumber => {
+        {paginationRange.map((pageNumber,i) => {
           if (pageNumber === DOTS) {
-            return <li className="paginationitem dots">&#8230;</li>;
+            return <li key={i} className="paginationitem dots">&#8230;</li>;
           }
-
           return (
             <li
+              key={i}
               className={classnames('paginationitem', {
                 selected: pageNumber === currentPage + 1,
               })}

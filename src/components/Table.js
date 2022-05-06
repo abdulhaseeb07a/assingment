@@ -46,19 +46,19 @@ function Table({
 
   useEffect(() => {
     gotoPage(0);
-  }, [pageCount]);
+  }, [gotoPage, pageCount]);
 
   // Render the UI for your table
   return (
     <div className="App full-view-width">
       <table {...getTableProps()} className="table">
         <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()} scope="col">
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+          {headerGroups.map((headerGroup ,i) => (
+            <tr {...headerGroup.getHeaderGroupProps()} scope="col" key={i}>
+              {headerGroup.headers.map((column ,j) => (
+                <th {...column.getHeaderProps(column.getSortByToggleProps())} key={j}>
                   {column.render('Header')}
-                  <span>
+                  <span key={j}>
                     {column.isSorted
                       ? column.isSortedDesc
                         ? ' ↓'
@@ -74,10 +74,10 @@ function Table({
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} scope="row">
-                {row.cells.map(cell => {
+              <tr {...row.getRowProps()} scope="row" key={i}>
+                {row.cells.map((cell ,j) => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    <td {...cell.getCellProps()} key={j}>{cell.render('Cell')}</td>
                   );
                 })}
               </tr>

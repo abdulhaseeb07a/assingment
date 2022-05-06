@@ -9,14 +9,6 @@ import { getAuditLogs } from './api/auditLogService';
 
 import HomePage from '../containers/Home';
 
-/**
- *
- * @param  root0
- * @param  root0.logs
- * @param  root0.totalRecords
- * @param  root0.listAppType
- * @param  root0.listAppId
- */
 function Home({ logs, totalRecords, listAppType, listAppId }) {
   /** states and constants initializations */
   const [filterData, setfilterData] = useState(logs.auditLog);
@@ -32,8 +24,6 @@ function Home({ logs, totalRecords, listAppType, listAppId }) {
 
   /**
    * Child filter button event handler
-   *
-   * @param  params
    */
   const handledSearch = params => {
     if (
@@ -87,7 +77,7 @@ function Home({ logs, totalRecords, listAppType, listAppId }) {
         setLoading(false);
       }
     },
-    [pageCount]
+    [filterData]
   );
   /** */
 

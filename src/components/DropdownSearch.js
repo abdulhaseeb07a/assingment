@@ -6,7 +6,7 @@ function DropDownSearch({ id, label, onChange, optList }) {
     <div className="form-group col-md-2">
       <label htmlFor={id}>{label}</label>
       <select id={id} className="form-control" onChange={onChange}>
-        <option selected></option>
+        <option></option>
         {optList &&
           optList.map((item, i) => {
             return (
