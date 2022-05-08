@@ -50,8 +50,8 @@ function Table({
 
   // Render the UI for your table
   return (
-    <div className="App full-view-width">
-      <table {...getTableProps()} className="table">
+    <div className="App">
+      <table {...getTableProps()} className="table table-striped">
         <thead>
           {headerGroups.map((headerGroup ,i) => (
             <tr {...headerGroup.getHeaderGroupProps()} scope="col" key={i}>

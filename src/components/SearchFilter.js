@@ -39,7 +39,7 @@ export default function SearchFilters({ listAppType, listAppId, onSearch }) {
 
   return (
     <div className="searchLogger full-view-width">
-      <Form>
+      <Form className='search-form-style'>
         <div className="form-row">
           <DropDownSearch
             id="actionType"
