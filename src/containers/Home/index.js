@@ -1,6 +1,7 @@
 import styles from '../../styles/Home.module.css';
 import SearchFilters from '../../components/SearchFilter';
 import Table from '../../components/Table';
+import PageHead from '../PageHead';
 
 function HomePage({
   listAppType,
@@ -13,6 +14,7 @@ function HomePage({
 }){  
   return (
     <div className={styles.container}>
+      <PageHead />
       <main className={styles.main}>
         {listAppType && 
           <SearchFilters
